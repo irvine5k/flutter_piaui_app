@@ -3,10 +3,10 @@ import 'package:flutter_piaui_app/src/pages/login_page/login_page.dart';
 import 'package:flutter_piaui_app/src/shared/auth/auth_controller.dart';
 import 'package:provider/provider.dart';
 
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiProvider(

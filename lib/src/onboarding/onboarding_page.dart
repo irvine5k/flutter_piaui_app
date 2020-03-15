@@ -85,7 +85,10 @@ class OnboardingPage extends StatelessWidget {
                   ),
                 );
               },
-              showSkipButton: false,
+              showSkipButton: true,
+              skipText: Text(
+                "Pular",
+              ),
               doneText: Text(
                 "Começar",
               ),
@@ -95,6 +98,7 @@ class OnboardingPage extends StatelessWidget {
                 fontSize: 16.0,
                 fontFamily: "Regular",
               ),
+              background: Colors.blue,
             ),
           ],
         ),

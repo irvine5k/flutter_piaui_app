@@ -30,7 +30,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   google_fonts: ^0.3.9
   font_awesome_flutter: ^8.7.0
-
+  provider: ^4.0.4
 dev_dependencies:
   build_runner: ^1.8.0
   mobx_codegen: ^1.0.2

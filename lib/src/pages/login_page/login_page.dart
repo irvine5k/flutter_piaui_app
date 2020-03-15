@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_piaui_app/src/shared/auth/auth_controller.dart';
 import 'package:flutter_piaui_app/src/shared/colors.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final AuthController authController = Provider.of<AuthController>(context);
     return Scaffold(
         body: Stack(
       children: <Widget>[
@@ -55,6 +58,9 @@ class LoginPage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: RaisedButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5),
+                      ),
                       padding: EdgeInsets.all(16),
                       color: AppColors.primaryColor,
                       child: Row(
@@ -72,7 +78,7 @@ class LoginPage extends StatelessWidget {
                           )
                         ],
                       ),
-                      onPressed: () {},
+                      onPressed: authController.signIn,
                     ),
                   )
                 ],

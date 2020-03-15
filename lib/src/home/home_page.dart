@@ -15,11 +15,11 @@ class HomePage extends StatelessWidget {
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.exit_to_app),
-          color: Colors.grey,
+          color: Colors.black87,
           onPressed: _authController.signOut,
         ),
         title: Text(
-          'Meetings',
+          'Eventos',
           style: TextStyle(
               color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
         ),
@@ -74,6 +74,7 @@ class HomePage extends StatelessWidget {
               child: Icon(
                 Icons.border_all,
                 size: 30,
+                color: Colors.black87,
               ),
             ),
             Padding(
@@ -81,6 +82,7 @@ class HomePage extends StatelessWidget {
               child: Icon(
                 Icons.event_note,
                 size: 30,
+                color: Colors.black87,
               ),
             ),
           ],

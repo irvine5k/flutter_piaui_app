@@ -135,8 +135,6 @@ class _SeenFirtPageState extends State<SeenFirtPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: AppColors.primaryColor,
-    );
+    return Container(color: Color(0xff1371ec));
   }
 }

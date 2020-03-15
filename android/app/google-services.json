@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "367414637956",
+    "firebase_url": "https://flutter-piaui-app.firebaseio.com",
+    "project_id": "flutter-piaui-app",
+    "storage_bucket": "flutter-piaui-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:367414637956:android:31c3b7713ff162e0f2d9d1",
+        "android_client_info": {
+          "package_name": "com.irvine5k.flutter_piaui_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "367414637956-qr397dgeggk1jpbsdtvaaog39jkgjreh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjKwOYHWu5dmUkFcXgcY1rCtQHfbJPXvY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "367414637956-qr397dgeggk1jpbsdtvaaog39jkgjreh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -18,7 +18,7 @@ class _AuthHandlerNavigatorState extends State<AuthHandlerNavigator> {
     return Observer(
       builder: (ctx) {
         if (_authController.authStream.data != null) {
-          return Home();
+          return HomePage();
         } else {
           return LoginPage();
         }

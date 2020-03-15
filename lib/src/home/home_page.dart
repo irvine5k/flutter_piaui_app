@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_piaui_app/src/home/widgets/card.dart';
+import 'package:flutter_piaui_app/src/shared/auth/auth_controller.dart';
+import 'package:provider/provider.dart';
 
-class Home extends StatelessWidget {
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final _authController = Provider.of<AuthController>(context);
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.exit_to_app),
+          color: Colors.grey,
+          onPressed: _authController.signOut,
+        ),
         title: Text(
           'Meetings',
           style: TextStyle(
@@ -16,10 +25,13 @@ class Home extends StatelessWidget {
         ),
         actions: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(right: 20),
-            child: CircleAvatar(
-              child: Icon(Icons.verified_user),
-              backgroundColor: Colors.blue,
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: GestureDetector(
+              child: CircleAvatar(
+                child: Icon(Icons.verified_user),
+                backgroundColor: Colors.blue,
+              ),
+              onTap: () {},
             ),
           ),
         ],

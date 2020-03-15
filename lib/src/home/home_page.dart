@@ -1,25 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_piaui_app/src/home/widgets/card.dart';
+import 'package:flutter_piaui_app/src/shared/auth/auth_controller.dart';
+import 'package:provider/provider.dart';
 
-class Home extends StatelessWidget {
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final _authController = Provider.of<AuthController>(context);
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.exit_to_app),
+          color: Colors.black87,
+          onPressed: _authController.signOut,
+        ),
         title: Text(
-          'Meetings',
+          'Eventos',
           style: TextStyle(
               color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
         ),
         actions: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(right: 20),
-            child: CircleAvatar(
-              child: Icon(Icons.verified_user),
-              backgroundColor: Colors.blue,
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: GestureDetector(
+              child: CircleAvatar(
+                child: Icon(Icons.verified_user),
+                backgroundColor: Colors.blue,
+              ),
+              onTap: () {},
             ),
           ),
         ],
@@ -62,6 +74,7 @@ class Home extends StatelessWidget {
               child: Icon(
                 Icons.border_all,
                 size: 30,
+                color: Colors.black87,
               ),
             ),
             Padding(
@@ -69,6 +82,7 @@ class Home extends StatelessWidget {
               child: Icon(
                 Icons.event_note,
                 size: 30,
+                color: Colors.black87,
               ),
             ),
           ],

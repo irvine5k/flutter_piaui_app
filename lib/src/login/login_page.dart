@@ -70,6 +70,9 @@ class LoginPage extends StatelessWidget {
                       return RaisedButton(
                         padding: EdgeInsets.all(16),
                         color: AppColors.primaryColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[

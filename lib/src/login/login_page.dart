@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_piaui_app/src/shared/auth/auth_controller.dart';
 import 'package:flutter_piaui_app/src/shared/colors.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -8,14 +9,17 @@ import 'package:provider/provider.dart';
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final AuthController authController = Provider.of<AuthController>(context);
+    final _authController = Provider.of<AuthController>(context);
+
     return Scaffold(
         body: Stack(
       children: <Widget>[
         Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/login.png'), fit: BoxFit.cover),
+              image: AssetImage('assets/login.png'),
+              fit: BoxFit.cover,
+            ),
           ),
         ),
         Align(
@@ -57,29 +61,33 @@ class LoginPage extends StatelessWidget {
                   SizedBox(height: 30),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: RaisedButton(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      padding: EdgeInsets.all(16),
-                      color: AppColors.primaryColor,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Icon(FontAwesomeIcons.google, color: Colors.white),
-                          SizedBox(width: 12),
-                          Text(
-                            "Entrar",
-                            style: GoogleFonts.rubik(
-                              fontSize: 18,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          )
-                        ],
-                      ),
-                      onPressed: authController.signIn,
-                    ),
+                    child: Observer(builder: (context) {
+                      if (_authController.loading) {
+                        return Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
+                      return RaisedButton(
+                        padding: EdgeInsets.all(16),
+                        color: AppColors.primaryColor,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Icon(FontAwesomeIcons.google, color: Colors.white),
+                            SizedBox(width: 12),
+                            Text(
+                              "Entrar",
+                              style: GoogleFonts.rubik(
+                                fontSize: 18,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            )
+                          ],
+                        ),
+                        onPressed: _authController.signIn,
+                      );
+                    }),
                   )
                 ],
               ),

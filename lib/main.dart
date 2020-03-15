@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_piaui_app/src/auth/auth_handler_navigator.dart';
+import 'package:flutter_piaui_app/src/onboarding/onboarding_page.dart';
 import 'package:flutter_piaui_app/src/shared/auth/auth_controller.dart';
 import 'package:provider/provider.dart';
 
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: AuthHandlerNavigator(),
+        home: SeenFirtPage(),
       ),
     );
   }
